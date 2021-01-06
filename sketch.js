@@ -32,7 +32,7 @@ function clear_Can(){
 	tBox.poly(50,8);
 	 for(let j=0;j<polyAr.length;j=j+1){
 	polyAr[j].move();polyAr[j].display(6);
-	 if(coll(roaver,polyAr[j])==0){polyAr.splice(j,1);}
+	 //if(coll(roaver,polyAr[j])==0){polyAr.splice(j,1);}
 	 }
 	 
 	 if(polyAr.length>15){polyAr.splice(0,polyAr.length-5);}
@@ -45,7 +45,9 @@ function clear_Can(){
 	 //tBox.c.fillText("slider is "+slider.value,40,80);
      for(let j=0;j<bull.length;j=j+1){
 	bull[j].move();bull[j].display();
+	if(bull[j].y<0){bull.splice(j,1);}
 	 }
+     
  }
 
 function addPoly(){

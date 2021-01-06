@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>proj2a</title>
+    <title>proj2</title>
 
     <script src="sketch.js"></script>
     <script src="logo.js"></script>
@@ -22,11 +22,17 @@
   <input type="button" id="but2" value="click to run" onclick="start()">
   <input type="button" id="but3" value="click to stop" onclick="stopArray()">
   <input type="range" id="slide1" min="1" max="700" ondblclick="shoot()">
-  <p id="par1">testing</p>
+ 
+ <p id="par1">testing</p>
+
+  <div id="div1" onclick="chgpic()">
+  <img src="astro1.jpg" id="image1" height="150" width="100">
+  <img src="astro2.jpg" id="image2" height="1" width="1">
+</div>
 </body>
 
 <script>
- let tBox=new logo(50,400,0,"can1");
+ let tBox=new logo(50,400,0,"can1");//for drawing shooter
  let par1=document.getElementById("par1");
  par1.style.border="5px blue solid";
  par1.style.width="100px";
@@ -37,7 +43,7 @@
 let polyAr=[];let m1=new move(200,200,3,4);
 let roaver=new move(100,200,2,3);//hanvt shown class yet 
 
-slider.addEventListener("input", movePar);
+//slider.addEventListener("click", movePar);
 
 document.getElementById("can1").addEventListener("mouseover", func2);let cntM=0;
 let bull=[];
