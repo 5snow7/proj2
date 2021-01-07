@@ -28,25 +28,31 @@ function clear_Can(){
      //ie when click button "click to run"
 	 clear_Can();//havnt shown class
 	 roaver.move();roaver.display(4);
+	cnt++;movePar();
 	tBox.set1(Math.floor(slider.value),450,0);
-	tBox.poly(50,8);
+	tBox.poly(50,8);//the gun.
+	
+	for(let j=0;j<polyAr.length;j=j+1){
+    	 polyAr[j].move();polyAr[j].display(6);}
+	
 	 for(let j=0;j<polyAr.length;j=j+1){
-	polyAr[j].move();polyAr[j].display(6);
-	 //if(coll(roaver,polyAr[j])==0){polyAr.splice(j,1);}
-	 }
+     for(let k=0;k<bull.length;k=k+1){
+	if(coll(bull[k],polyAr[j])==0){polyAr.splice(j,1);}
+	 }}
 	 
+	 for(let k=0;k<bull.length;k=k+1){
+	bull[k].move();bull[k].display();
+	if(bull[k].y<0){bull.splice(k,1);}
+	 }
 	 if(polyAr.length>15){polyAr.splice(0,polyAr.length-5);}
      if(polyAr.length==0){init();}
-     cnt++;//cnt=cnt+1;
-	 if(cnt>1500){stopArray();cnt=0;}
-     t2.c.font="30px Ariel";
+     
+	 if(cnt>3000){cnt=0;stopArray();}
+     
+	 t2.c.font="30px Ariel";
 	 t2.c.fillText("mouse on "+cntM+" times",40,60);
-    // tBox.c.font="30px Ariel";
-	 //tBox.c.fillText("slider is "+slider.value,40,80);
-     for(let j=0;j<bull.length;j=j+1){
-	bull[j].move();bull[j].display();
-	if(bull[j].y<0){bull.splice(j,1);}
-	 }
+    
+     par1.innerHTML="# of bullits out is "+bull.length;
      
  }
 
@@ -59,6 +65,8 @@ function stopArray(){
 	//runs when click "click to stop"
 	clearInterval(moveOne);
 }
+
+
 
 function coll(b1,b2){
 	if(Math.abs(b1.x-b2.x)<20&&Math.abs(b1.y-b2.y)<20){return 0;}

@@ -40,8 +40,4 @@ this.t.set1(this.x,this.y,90);
 this.t.poly(20,3);
 }	
 
-destroy(ar){
-	//if(this.y<-10){ar.splice(this.
-}
-
 }

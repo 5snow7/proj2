@@ -12,16 +12,17 @@
     <script src="move.js"></script>
     <script src="line.js"></script>
      <script src="moreFunctions.js"></script> 	
+	 <script src="demoStuff.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
   
-  <body id="bod1">
+  <body id="bod1" onkeydown="arrayDemo()">
   <canvas id="can1" width="800" height="500" style="border:10px solid green;padding: 10px;background-color:yellow;" onclick="addPoly()"></canvas>
  
   <input type="button" id="but1" value="click to init" onclick="initPolys()">
   <input type="button" id="but2" value="click to run" onclick="start()">
   <input type="button" id="but3" value="click to stop" onclick="stopArray()">
-  <input type="range" id="slide1" min="1" max="700" ondblclick="shoot()">
+  <input type="range" id="slide1" min="1" max="700">
  
  <p id="par1">testing</p>
 
@@ -39,14 +40,15 @@
  let slider=document.getElementById("slide1");
  let t=new logo(30,30,0,"can1");
  let t2=new logo(30,30,0,"can1");
- let col=50;let moveOne;let cnt=0;
+ let moveOne;let cnt=0;let cntM=0;
 let polyAr=[];let m1=new move(200,200,3,4);
 let roaver=new move(100,200,2,3);//hanvt shown class yet 
 
-//slider.addEventListener("click", movePar);
+slider.addEventListener("click",shoot);
 
-document.getElementById("can1").addEventListener("mouseover", func2);let cntM=0;
+document.getElementById("can1").addEventListener("keydown", func2);
 let bull=[];
+let tText=new logo(20,20,0,"can1");
  
 </script>
  
